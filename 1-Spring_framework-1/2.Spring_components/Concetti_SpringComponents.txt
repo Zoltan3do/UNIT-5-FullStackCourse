@@ -1,0 +1,32 @@
+L' application.properties gestisce le variabili d'ambiente con chiave=valore:
+@PropertySource("application.properties");
+@Value("${"nomeVariabile"}) -> assegna il valore di una variabile d'ambiente ad una variabile del codice.
+
+
+Il Loose Coupling promuove 2 tecniche:
+Inversion of Control -> Far gestire le istanze dal framework tramite i beans.
+Dependency Injection -> Iniettare dipendenze a seconda del caso rendendo l'accoppiamento debole e malleabile.
+
+
+@Configuration = Gestiamo noi le dipendenze;
+@Component = Arrangiati -> gestisce anche le dipendenze.
+
+
+@Autowired = Si cerca da solo la dipendenza in base a dove la aggiunge (costruttori, campi o setter).
+
+
+@Component("nomeComponente") -> Anche i componenti possono avere un nome.
+
+
+@Primary -> Risolve le ambiguità creando un caso di default.
+(@Qualifier("nomeComponente") Tipo nome) -> Offre un controllo sulla risoluzione delle dipendenze.
+
+
+@Component
+CommandLineRunner -> implements CommandLineRunner {
+	public void run (String… args) throws Exception {
+		sout("Ciao Dal Runner");
+	}
+} -> Questo metodo verrà eseguito all'avvio dell'app prima del main;
+
+

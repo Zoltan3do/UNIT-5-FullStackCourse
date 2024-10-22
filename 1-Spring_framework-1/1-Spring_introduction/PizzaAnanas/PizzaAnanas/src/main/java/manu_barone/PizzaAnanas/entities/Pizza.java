@@ -17,7 +17,7 @@ public class Pizza extends Prodotto {
         put("Mozzarella", 2.2);
         put("Doppio prosciutto", 5.5);
         put("Ananas", 77.0);
-        put("Salame",435346543.6);
+        put("Salame", 435346543.6);
     }};
 
     private Map<String, Double> toppings = new HashMap<>();
