@@ -25,7 +25,7 @@ public class MenuInitializr implements CommandLineRunner {
             add((Pizza) ctx.getBean("margherita"));
             add((Bevanda) ctx.getBean("acqua"));
             add((Pizza) ctx.getBean("hawaiana"));
-        }}, 2, new Tavolo(2, 3));
+        }}, 2, new Tavolo(3));
 
         System.out.println(o1);
     }

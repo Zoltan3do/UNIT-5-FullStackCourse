@@ -11,12 +11,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class Tavolo {
 
-    private int numero;
+    private int numero = 1;
     private int numeroCopertiMassimo;
     private StatoTavolo stato = StatoTavolo.LIBERO;
 
-    public Tavolo(int numero, int numeroCopertiMassimo) {
-        this.numero = numero;
+    public Tavolo(int numeroCopertiMassimo) {
+        numero++;
         this.numeroCopertiMassimo = numeroCopertiMassimo;
     }
 }
