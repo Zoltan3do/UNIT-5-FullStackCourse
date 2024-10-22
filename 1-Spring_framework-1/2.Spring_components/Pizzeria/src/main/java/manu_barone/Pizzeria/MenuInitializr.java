@@ -13,7 +13,7 @@ import java.util.logging.Logger;
 
 @Component
 public class MenuInitializr implements CommandLineRunner {
-    
+
     @Autowired
     Menu menu;
 

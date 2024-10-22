@@ -10,7 +10,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 @SpringBootApplication
 public class PizzeriaApplication {
-    private static final Logger logger = LoggerFactory.getLogger(Ordine.class);
+    private static final Logger logger = LoggerFactory.getLogger(PizzeriaApplication.class);
 
     public static void main(String[] args) {
         SpringApplication.run(PizzeriaApplication.class, args);
