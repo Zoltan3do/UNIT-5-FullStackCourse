@@ -1,19 +1,27 @@
 package manu_barone.Pizzeria;
 
 import manu_barone.Pizzeria.entities.*;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.Scope;
 import java.util.ArrayList;
 import java.util.List;
 
 @Configuration
+@PropertySource("application.properties")
 public class BeansManager {
 
     @Bean(name="margherita")
     @Scope("prototype")
     public Pizza margherita() {
         return new Pizza("Margherita", new ArrayList<>());
+    }
+
+    @Bean
+    public double costoCoperto(@Value("${tavolo.costoCoperto}") double costo){
+        return costo;
     }
 
     @Bean
@@ -60,6 +68,27 @@ public class BeansManager {
         p.add(hawaiana());
         return p;
     }
+
+    @Bean
+    public Tavolo tavolo1(){
+        return new Tavolo(5);
+    }
+
+    @Bean
+    public Tavolo tavolo2(){
+        return new Tavolo(5);
+    }
+
+    @Bean
+    public Tavolo tavolo3(){
+        return new Tavolo(5);
+    }
+
+    @Bean
+    public Tavolo tavolo4(){
+        return new Tavolo(5);
+    }
+
 
 
 }

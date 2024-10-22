@@ -8,10 +8,9 @@ import org.springframework.stereotype.Component;
 @Getter
 @Setter
 @ToString
-@Component
 public class Tavolo {
 
-    private int numero = 1;
+    private static int numero = 1;
     private int numeroCopertiMassimo;
     private StatoTavolo stato = StatoTavolo.LIBERO;
 

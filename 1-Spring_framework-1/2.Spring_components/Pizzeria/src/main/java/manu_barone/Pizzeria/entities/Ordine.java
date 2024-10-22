@@ -15,7 +15,7 @@ import java.util.List;
 @Getter
 @NoArgsConstructor
 @ToString
-@PropertySource("application.properties")
+
 public class Ordine {
 
     private List<Prodotto> elementiMenu = new ArrayList<>();
@@ -25,15 +25,13 @@ public class Ordine {
     private LocalDate oraAcquisizione = LocalDate.now();
     private double importoTotale = 0;
     private Tavolo tavolo;
-
-    @Value("${tavolo.costoCoperto}")
     private double prezzoCoperto;
 
-    public Ordine(List<Prodotto> elementiMenu, int numeroCoperti, Tavolo tavolo) {
+    public Ordine(List<Prodotto> elementiMenu, int numeroCoperti, Tavolo tavolo, double prezzoCoperto) {
         this.elementiMenu = elementiMenu;
         numeroOrdine++;
         this.numeroCoperti = numeroCoperti;
-
+        this.prezzoCoperto = prezzoCoperto;
         setImportoTotale(elementiMenu);
         this.tavolo = tavolo;
     }
