@@ -18,8 +18,6 @@ import java.util.List;
 @PropertySource("application.properties")
 public class Ordine {
 
-
-
     private List<Prodotto> elementiMenu = new ArrayList<>();
     private static int numeroOrdine = 1;
     private StatoOrdine stato = StatoOrdine.IN_CORSO;
@@ -33,18 +31,18 @@ public class Ordine {
 
     public Ordine(List<Prodotto> elementiMenu, int numeroCoperti, Tavolo tavolo) {
         this.elementiMenu = elementiMenu;
-        numeroOrdine ++;
+        numeroOrdine++;
         this.numeroCoperti = numeroCoperti;
 
         setImportoTotale(elementiMenu);
         this.tavolo = tavolo;
     }
 
-    public void setImportoTotale(List<Prodotto> pr){
-        for(Prodotto p: pr){
+    public void setImportoTotale(List<Prodotto> pr) {
+        for (Prodotto p : pr) {
             this.importoTotale += p.getPrezzo();
         }
-        for(int i = 0; i < numeroCoperti; i++) {
+        for (int i = 0; i < numeroCoperti; i++) {
             this.importoTotale += prezzoCoperto;
         }
     }
@@ -53,16 +51,13 @@ public class Ordine {
         this.elementiMenu = elementiMenu;
     }
 
-
     public void setNumeroOrdine(int numeroOrdine) {
         this.numeroOrdine = numeroOrdine;
     }
 
-
     public void setNumeroCoperti(int numeroCoperti) {
         this.numeroCoperti = numeroCoperti;
     }
-
 
 
 }
