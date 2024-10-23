@@ -70,7 +70,7 @@ class PizzeriaApplicationTests {
 		o = new Ordine(menu.getProdotti(),numeroCoperti,tavolo1,coperto);
 		assertNotNull(o,"L'ordine è null");
 	}
-	
+
 
 	@ParameterizedTest
 	@CsvSource({"0.45,FUNGHI,333"})
@@ -79,5 +79,6 @@ class PizzeriaApplicationTests {
 		System.out.println(t);
 		assertNotNull(t, "Non istanziato correttamente");
 	}
+
 
 }
