@@ -51,6 +51,7 @@ class PizzeriaApplicationTests {
 		assertNotNull(cocacola,"La cocacola non esiste!");
 	}
 
+
 	@Test
 	void peroniTest( ){
 		Bevanda peroni2 = peroni;
@@ -60,7 +61,7 @@ class PizzeriaApplicationTests {
 
 
 	static Stream<Arguments> copertoPrice(){
-		return Stream.of(Arguments.of(5, (Double) ctx.getBean("costoCoperto")));
+		return Stream.of(Arguments.of(5, ctx.getBean("costoCoperto")));
 	}
 	@ParameterizedTest
 	@MethodSource("copertoPrice")
@@ -69,11 +70,12 @@ class PizzeriaApplicationTests {
 		o = new Ordine(menu.getProdotti(),numeroCoperti,tavolo1,coperto);
 		assertNotNull(o,"L'ordine è null");
 	}
+	
 
 	@ParameterizedTest
 	@CsvSource({"0.45,FUNGHI,333"})
-	void creazioneIngrediente(double prezzo, String nome, double calorie){
-		Topping t = new Topping(prezzo,nome,calorie);
+	void creazioneIngrediente(double prezzo, String nome, double calorie) {
+		Topping t = new Topping(prezzo, nome, calorie);
 		System.out.println(t);
 		assertNotNull(t, "Non istanziato correttamente");
 	}

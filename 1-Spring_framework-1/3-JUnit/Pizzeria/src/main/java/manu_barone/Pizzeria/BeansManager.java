@@ -50,7 +50,6 @@ public class BeansManager {
 
     @Bean
     @Scope("prototype")
-    @Qualifier("peroni")
     public Bevanda peroni() {
         return new Bevanda(3, "Peroni", 223454.5);
     }
@@ -79,17 +78,17 @@ public class BeansManager {
 
     @Bean
     public Tavolo tavolo2(){
-        return new Tavolo(5);
+        return new Tavolo(3);
     }
 
     @Bean
     public Tavolo tavolo3(){
-        return new Tavolo(5);
+        return new Tavolo(7);
     }
 
     @Bean
     public Tavolo tavolo4(){
-        return new Tavolo(5);
+        return new Tavolo(10);
     }
 
 
