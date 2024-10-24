@@ -20,8 +20,8 @@ public class ToppingRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        ts.saveTopping(new Topping(5.4, "Pomodoro", 432.4));
-        ts.saveTopping(new Topping(3.4, "Mozzarella", 432.4));
+//        ts.saveTopping(new Topping(5.4, "Pomodoro", 432.4));
+//        ts.saveTopping(new Topping(3.4, "Mozzarella", 432.4));
 
     }
 }

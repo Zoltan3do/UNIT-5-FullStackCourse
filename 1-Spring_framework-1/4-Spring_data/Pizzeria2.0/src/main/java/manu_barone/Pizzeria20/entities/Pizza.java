@@ -53,4 +53,10 @@ public class Pizza extends Prodotto {
         System.out.println("-----------------------------------------");
     }
 
+    public void addProdotto(Topping t){
+        this.toppings.add(t);
+        setCalorie(this.toppings);
+        setPrezzo(this.toppings);
+    }
+
 }

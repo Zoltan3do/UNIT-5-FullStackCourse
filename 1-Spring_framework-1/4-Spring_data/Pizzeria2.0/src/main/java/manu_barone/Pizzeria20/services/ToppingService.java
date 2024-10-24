@@ -2,6 +2,7 @@ package manu_barone.Pizzeria20.services;
 
 import lombok.extern.slf4j.Slf4j;
 import manu_barone.Pizzeria20.entities.Topping;
+import manu_barone.Pizzeria20.exceptions.NotFoundExceptions;
 import manu_barone.Pizzeria20.repositories.ToppingRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,7 +19,7 @@ public class ToppingService {
         log.info("Il topping " + t.getNome() + " è stato salvato correttamente");
     }
 
-    public Topping findByName(String name){
-        return tp.findByName(name);
+    public Topping findByName(String name)  {
+        return tp.findFirstByNome(name).orElseThrow(()-> new NotFoundExceptions(name));
     }
 }
