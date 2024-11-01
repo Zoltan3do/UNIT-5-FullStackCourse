@@ -1,0 +1,18 @@
+1.GET https://postman-library-api.glitch.me/books
+
+2.GET https://postman-library-api.glitch.me/books?genre=computers
+
+3.POST https://postman-library-api.glitch.me/books -> {
+    "title": "The New World",
+    "author": "Aldous Huxley",
+    "genre": "Sci-Fi",
+    "yearPublished": 1946
+}
+
+4.PATCH https://postman-library-api.glitch.me/books/{{newBookId}} -> {
+    "checkedOut":true
+}
+
+5.GET https://postman-library-api.glitch.me/books/{{newBookId}}
+
+6.DELETE https://postman-library-api.glitch.me/books/{{newBookId}}
