@@ -10,6 +10,7 @@ import java.time.LocalDateTime;
 
 @RestControllerAdvice
 public class ExceptionHandlers {
+    
     @ExceptionHandler(BadRequestException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ErrorsRespDTO handleBadRequest(BadRequestException ex) {

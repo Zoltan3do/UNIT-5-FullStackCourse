@@ -4,6 +4,7 @@ import manu_barone.ViaggiAziendali.entities.Dipendente;
 import manu_barone.ViaggiAziendali.exceptions.BadRequestException;
 import manu_barone.ViaggiAziendali.payloads.DipendenteDTO;
 import manu_barone.ViaggiAziendali.payloads.LoginDTO;
+import manu_barone.ViaggiAziendali.payloads.LoginResponseDTO;
 import manu_barone.ViaggiAziendali.services.DipendenteSer;
 import manu_barone.ViaggiAziendali.services.SecurityService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,12 +26,12 @@ public class AuthorizationController {
     private DipendenteSer dipendenteSer;
 
     @PostMapping("/login")
-    public LoginDTO loginDTO(@RequestBody @Validated LoginDTO body, BindingResult validationResult) {
+    public LoginResponseDTO LoginResponseDTO(@RequestBody @Validated LoginDTO body, BindingResult validationResult) {
         if (validationResult.hasErrors()) {
             String message = validationResult.getAllErrors().stream().map(objectError -> objectError.getDefaultMessage()).collect(Collectors.joining(". "));
             throw new BadRequestException("Ci sono stati errori nel payload! " + message);
         }
-        return new LoginDTO(this.ss.checkCredentialsAndGenerateToken(body));
+        return new LoginResponseDTO(this.ss.checkCredentialsAndGenerateToken(body));
     }
 
     @PostMapping("/register")
