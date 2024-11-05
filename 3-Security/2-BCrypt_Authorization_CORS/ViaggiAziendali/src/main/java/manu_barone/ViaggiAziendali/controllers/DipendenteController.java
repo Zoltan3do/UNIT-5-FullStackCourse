@@ -71,7 +71,7 @@ public class DipendenteController {
     public void deleteProfile(@AuthenticationPrincipal Dipendente current){
         this.dipendenteSer.findByIdAndDelete(current.getUsername());
     }
-    
+
     @PatchMapping("/me/avatar")
     public String addAvatar(@AuthenticationPrincipal Dipendente current, @RequestParam("avatar") MultipartFile file){
         return this.dipendenteSer.aggiungiAvatar(current.getUsername(), file);
